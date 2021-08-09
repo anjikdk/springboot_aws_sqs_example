@@ -20,11 +20,12 @@ public class StudentServiceImpl implements StudentService
 	@Override
 	public Student saveStudent(Student stdResuorce) {
 
-		log.info("Entered into saveEmp() method");
+		log.info("Entered into saveStudent() method");
 		StudentEntity studentEntity = new StudentEntity();
 		BeanUtils.copyProperties(stdResuorce, studentEntity);
 
 		studentRepository.save(studentEntity);
+		log.info("Exit from saveStudent() method");
 		
 		return stdResuorce;
 	}
