@@ -33,7 +33,7 @@ public class Producer {
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonString = mapper.writeValueAsString(student);
 			queueMessagingTemplate.send(endPoint, MessageBuilder.withPayload(jsonString).build());
-			logger.info("Message sent successfully  " + jsonString);
+			logger.info("Message published successfully  " + jsonString);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
